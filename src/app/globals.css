@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Global variables */
+  :root {
+    /* Size variables */
+    --header-height: 3.25rem;
+    --footer-height: 12rem;
+    --view-height: calc(100dvh - var(--header-height));
+
+    @media (min-width: 768px) {
+      --footer-height: 4rem;
+    }
+
+    /* Main colors */
+    --main: hsl(259, 76%, 58%);
+    --main-light: hsl(259, 50%, 59%);
+    --main-dark: hsl(259, 86%, 14%);
+  }
+
+  /* Global light variables */
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --border: 240 5.9% 90%;
+
+    --scrollbar: 0 0% 48%;
+  }
+
+  /* Global dark variables */
+  [data-theme='dark'] {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+
+    --scrollbar: 0 0% 98%;
+  }
+
+  /* Default styling */
+  * {
+    box-sizing: border-box;
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+    font-synthesis: none;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    scroll-padding-top: var(--header-height);
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--scrollbar) / 25%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--scrollbar) / 45%);
+
+    &:hover {
+      background: hsl(var(--scrollbar) / 85%);
+    }
+  }
+
+  /* Set Container */
+  .grid-container {
+    @apply grid grid-cols-12;
+  }
+
+  .grid-child {
+    @apply col-span-12 col-start-1 md:col-span-8 md:col-start-3;
+  }
+
+  /* Theme Icon Active */
+  .sun-icon {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .moon-icon {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  [data-theme='light'] {
+    .sun-icon {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .desktop-icon {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  [data-theme='dark'] {
+    .moon-icon {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .desktop-icon {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}

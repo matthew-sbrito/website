@@ -1,0 +1,27 @@
+{
+  "locale": "en",
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact",
+    "themeButtonTitle": "Switch theme",
+    "localeButtonTitle": "Switch language"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "home": {
+    "greetings": "Hey there 👋,",
+    "me": "It's Matheus Brito",
+    "whatIAm": "I'm",
+    "whatIAmList": [
+      "Backend Developer",
+      "Frontend Developer",
+      "Software Engineer"
+    ]
+  }
+}

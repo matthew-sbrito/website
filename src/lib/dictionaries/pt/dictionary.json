@@ -1,0 +1,27 @@
+{
+  "locale": "pt",
+  "header": {
+    "home": "Inicio",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "services": "Serviços",
+    "contact": "Contato",
+    "themeButtonTitle": "Trocar o tema",
+    "localeButtonTitle": "Trocar o idioma"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "home": {
+    "greetings": "Olá 👋,",
+    "me": "Eu sou o Matheus Brito",
+    "whatIAm": "Eu sou um",
+    "whatIAmList": [
+      "Desenvolvedor Backend",
+      "Desenvolvedor Frontend",
+      "Engenheiro de Software"
+    ]
+  }
+}
