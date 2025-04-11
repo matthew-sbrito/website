@@ -20,13 +20,13 @@ export async function generateStaticParams() {
   return [{ lang: 'en-US' }, { lang: 'de' }];
 }
 
-type RootProps = DictionaryPageProps<{
+type RootProps = DictionaryPageProps & {
   children: React.ReactNode;
-}>;
+};
 
 export default function RootLayout({ children, params }: RootProps) {
   return (
-    <html suppressHydrationWarning lang={params.lang}>
+    <html suppressHydrationWarning lang={params.lang} className="scroll-smooth">
       <body className={`${roboto.className}`}>
         <ThemeProvider enableSystem={true}>{children}</ThemeProvider>
       </body>

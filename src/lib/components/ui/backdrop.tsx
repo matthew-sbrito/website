@@ -1,34 +1,43 @@
 'use client';
 
+import { ReactNode } from 'react';
+import { createPortal } from 'react-dom';
+
 import { Variants, motion } from 'framer-motion';
+
 import { cn } from '@/utils/cn';
 
 export const backdropVariants: Variants = {
-  active: {
+  opened: {
     opacity: 1,
     pointerEvents: 'auto',
   },
-  inactive: {
+  closed: {
     opacity: 0,
     pointerEvents: 'none',
   },
 };
 
 type Props = {
-  active: boolean;
+  opened: boolean;
   transparent?: boolean;
-  toggle: (active: boolean) => void;
+  toggle: (opened: boolean) => void;
+  children: ReactNode;
 };
 
-export function Backdrop({ active, transparent, toggle }: Props) {
-  return (
-    <motion.div
-      className={cn('fixed w-screen h-screen inset-0 z-30', {
-        'bg-black/30': !transparent,
-      })}
-      initial="inactive"
-      animate={active ? 'active' : 'inactive'}
-      variants={backdropVariants}
-      onClick={() => toggle(false)}></motion.div>
+export function Backdrop({ opened, transparent, toggle, children }: Props) {
+  return createPortal(
+    <>
+      <motion.div
+        className={cn('fixed w-screen h-screen inset-0 z-30', {
+          'bg-black/30': !transparent,
+        })}
+        initial="inactive"
+        animate={opened ? 'opened' : 'closed'}
+        variants={backdropVariants}
+        onClick={() => toggle(false)}></motion.div>
+      {children}
+    </>,
+    document.body
   );
 }

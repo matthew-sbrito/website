@@ -18,11 +18,15 @@
     --main: hsl(259, 76%, 58%);
     --main-light: hsl(259, 50%, 59%);
     --main-dark: hsl(259, 86%, 14%);
+
+    --main-rgb: 118 67 229;
+    --main-light-rgb: 131 98 203;
+    --main-dark-rgb: 24 5 66;
   }
 
   /* Global light variables */
   :root {
-    --background: #ffffff;
+    --background: #efefef;
     --foreground: #171717;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -33,7 +37,7 @@
 
   /* Global dark variables */
   [data-theme='dark'] {
-    --background: #0a0a0a;
+    --background: #1f1f1f;
     --foreground: #ededed;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;

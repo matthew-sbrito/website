@@ -3,8 +3,6 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
-import { LoaderCircleIcon } from 'lucide-react';
-
 import { DictionaryComponentProps } from '@/dictionaries';
 
 import { LinksSection } from './links';
@@ -13,7 +11,7 @@ import { LocaleMenu } from './locale-menu';
 import { ThemeButton } from './theme-button';
 import { ThemeMenu } from './theme-menu';
 
-type Props = DictionaryComponentProps<{}>;
+type Props = DictionaryComponentProps;
 
 export function Header({ dictionary }: Props) {
   const [scrollY, setScrollY] = useState(0);
@@ -27,13 +25,12 @@ export function Header({ dictionary }: Props) {
   const themeRect = themeRef.current?.getBoundingClientRect();
 
   useEffect(() => {
-    const updateScroll = () => setScrollY(window.scrollY);
+    const ac = new AbortController();
 
-    updateScroll();
+    setScrollY(window.scrollY);
+    window.addEventListener('scroll', () => setScrollY(window.scrollY), ac);
 
-    window.addEventListener('scroll', updateScroll);
-
-    return () => window.removeEventListener('scroll', updateScroll);
+    return () => ac.abort();
   }, []);
 
   useEffect(() => {
@@ -50,14 +47,16 @@ export function Header({ dictionary }: Props) {
       <header className="grid-container sticky top-0 z-20 h-[--header-height] gap-2 bg-gradient-to-b from-background/75 to-transparent md:pt-1 print:h-0">
         <nav className="grid-child flex h-full items-center justify-between border bg-card/75 px-3 py-1 text-card-foreground backdrop-blur-md md:rounded-2xl print:hidden">
           <a href="#home">
-            <Image
-              src="/images/me.png"
-              alt="Matheus Brito's Photo"
-              width={32}
-              height={32}
-            />
+            <div className="relative w-[2rem] h-[2rem] rounded-full overflow-hidden">
+              <Image
+                className="object-cover"
+                src="/images/me.jpg"
+                alt="Matheus Brito's Photo"
+                fill
+              />
+            </div>
           </a>
-          <div className="flex gap-3">
+          <div className="flex gap-3 items-center">
             <LinksSection dictionary={dictionary} />
             <ThemeButton
               dictionary={dictionary}
@@ -72,28 +71,20 @@ export function Header({ dictionary }: Props) {
           </div>
         </nav>
       </header>
+      <ThemeMenu
+        x={themeRect?.x}
+        scrollY={scrollY}
+        opened={menuThemeOpen}
+        toggle={setMenuThemeOpen}
+        dictionary={dictionary}
+      />
       <LocaleMenu
         dictionary={dictionary}
         x={localeRect?.x}
         scrollY={scrollY}
-        open={menuLocaleOpen}
+        opened={menuLocaleOpen}
         toggle={setMenuLocaleOpen}
       />
-      <ThemeMenu
-        x={themeRect?.x}
-        scrollY={scrollY}
-        open={menuThemeOpen}
-        toggle={setMenuThemeOpen}
-        dictionary={dictionary}
-      />
     </>
-  );
-}
-
-function LoadingIcons() {
-  return (
-    <div className="flex items-center gap-1 max-h-min">
-      <LoaderCircleIcon className="animate-spin" size={18} />
-    </div>
   );
 }

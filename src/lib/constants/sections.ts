@@ -11,8 +11,8 @@ export const ABOUT_SECTION: SectionModel = {
 };
 
 export const SERVICES_SECTION: SectionModel = {
-  id: 'services',
-  link: '#services',
+  id: 'skills',
+  link: '#skills',
 };
 
 export const CONTACT_SECTION: SectionModel = {

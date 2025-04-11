@@ -14,9 +14,9 @@ import {
   menuHeaderClassName,
 } from './common';
 
-type Props = DictionaryComponentProps<HeaderMenuProps>;
+type Props = DictionaryComponentProps & HeaderMenuProps;
 
-export function LocaleMenu({ open, toggle, x, scrollY, dictionary }: Props) {
+export function LocaleMenu({ opened, toggle, x, scrollY, dictionary }: Props) {
   const router = useRouter();
 
   function switchLocale(locale: Locales) {
@@ -34,8 +34,7 @@ export function LocaleMenu({ open, toggle, x, scrollY, dictionary }: Props) {
   }
 
   return (
-    <>
-      <Backdrop active={open} transparent={true} toggle={toggle} />
+    <Backdrop opened={opened} transparent={true} toggle={toggle}>
       <motion.div
         className={cn(menuHeaderClassName, 'w-40')}
         style={{
@@ -43,7 +42,7 @@ export function LocaleMenu({ open, toggle, x, scrollY, dictionary }: Props) {
           top: `calc(var(--header-height) + 5px + ${scrollY}px)`,
         }}
         initial="closed"
-        animate={open ? 'opened' : 'closed'}
+        animate={opened ? 'opened' : 'closed'}
         variants={headerMenuVariants}>
         <button
           className={cn('flex gap-2 items-center text-xs font-semibold', {
@@ -65,13 +64,13 @@ export function LocaleMenu({ open, toggle, x, scrollY, dictionary }: Props) {
           onClick={() => switchLocale('pt')}>
           <Image
             src="images/flags/pt-br.svg"
-            alt="United State Of America Flag"
+            alt="Brazil Flag"
             width={20}
             height={20}
           />
-          Português brasileiro
+          Português
         </button>
       </motion.div>
-    </>
+    </Backdrop>
   );
 }

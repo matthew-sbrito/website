@@ -3,7 +3,7 @@ import { ComponentProps } from 'react';
 
 import { DictionaryComponentProps } from '@/dictionaries';
 
-type Props = DictionaryComponentProps<ComponentProps<'button'>>;
+type Props = DictionaryComponentProps & ComponentProps<'button'>;
 
 export function LocaleButton({ dictionary, ...props }: Props) {
   return (

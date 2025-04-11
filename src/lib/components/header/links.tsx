@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+
 import { SECTIONS } from '@/constants/sections';
 import { DictionaryComponentProps } from '@/dictionaries';
 import { cn } from '@/utils/cn';
@@ -55,6 +56,14 @@ export function LinksSection({ dictionary }: Props) {
           </a>
         </li>
       ))}
+      <li>
+        <a
+          href={dictionary.resume.link}
+          target="_blank"
+          className="font-semibold text-sm">
+          {dictionary.header.resume}
+        </a>
+      </li>
     </ul>
   );
 }

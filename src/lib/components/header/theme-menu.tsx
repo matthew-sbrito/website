@@ -1,4 +1,7 @@
+'use client';
+
 import { useTheme } from 'next-themes';
+import { createPortal } from 'react-dom';
 
 import { motion } from 'framer-motion';
 
@@ -20,16 +23,21 @@ import {
   menuHeaderClassName,
 } from './common';
 
-type Props = DictionaryComponentProps<HeaderMenuProps>;
+type Props = DictionaryComponentProps & HeaderMenuProps;
 
 type Theme = 'dark' | 'light' | 'system';
 
-export function ThemeMenu({ dictionary, open, toggle, x, scrollY }: Props) {
+export function ThemeMenu({
+  dictionary,
+  opened: open,
+  toggle,
+  x,
+  scrollY,
+}: Props) {
   const { theme: currentTheme, setTheme, themes } = useTheme();
 
   return (
-    <>
-      <Backdrop active={open} transparent={true} toggle={toggle} />
+    <Backdrop opened={open} transparent={true} toggle={toggle}>
       <motion.div
         className={menuHeaderClassName}
         style={{
@@ -52,7 +60,7 @@ export function ThemeMenu({ dictionary, open, toggle, x, scrollY }: Props) {
           </button>
         ))}
       </motion.div>
-    </>
+    </Backdrop>
   );
 }
 

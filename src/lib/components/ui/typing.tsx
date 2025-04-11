@@ -58,7 +58,7 @@ export function Typing({ words, className, ...props }: Props) {
   return (
     <span
       className={cn(
-        'relative min-w-max max-w-min after:absolute after:right-[-6px] after:h-[30px] after:w-[5px] after:bg-main after:animate-cursor text-nowrap',
+        'relative min-w-max max-w-min after:absolute after:right-[-6px] after:h-[100%] after:w-[4px] after:bg-main after:animate-cursor text-nowrap',
         className
       )}
       {...props}>

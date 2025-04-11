@@ -1,27 +1,47 @@
 {
   "locale": "pt",
-  "header": {
-    "home": "Inicio",
-    "about": "Sobre",
-    "projects": "Projetos",
-    "services": "Serviços",
-    "contact": "Contato",
-    "themeButtonTitle": "Trocar o tema",
-    "localeButtonTitle": "Trocar o idioma"
-  },
   "theme": {
     "light": "Claro",
     "dark": "Escuro",
     "system": "Sistema"
   },
+  "header": {
+    "home": "Inicio",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "skills": "Habilidades",
+    "contact": "Contato",
+    "resume": "Curriculo",
+    "themeButtonTitle": "Trocar o tema",
+    "localeButtonTitle": "Trocar o idioma"
+  },
+  "resume": {
+    "link": "/pt/cv",
+    "redirectLink": "https://drive.google.com/file/d/1i5hzldbSE5s_R1N9RdavBiseNWIA-h8H/view?usp=sharing"
+  },
   "home": {
-    "greetings": "Olá 👋,",
-    "me": "Eu sou o Matheus Brito",
+    "greetings": "Olá👋,",
+    "me": "Eu sou o",
+    "myName": "Matheus Brito",
     "whatIAm": "Eu sou um",
     "whatIAmList": [
       "Desenvolvedor Backend",
       "Desenvolvedor Frontend",
       "Engenheiro de Software"
     ]
+  },
+  "about": {
+    "heading": "Sobre",
+    "subHeading": "Quem sou eu",
+    "description": "Sou um Engenheiro de Software Full Stack focado na construção de aplicações Web escaláveis e de alta performance. Tenho experiência no desenvolvimento de interfaces modernas de front-end utilizando TypeScript, React e Angular, além de sistemas robustos de back-end com C#, .NET e ASP.NET. Sigo os princípios SOLID, a arquitetura CLEAN e escrevo código sustentável, testável e preparado para escalar no longo prazo.\nMinha experiência abrange bancos de dados SQL (PostgreSQL, MySQL, SQL Server) e NoSQL (MongoDB, Redis), bem como o design e a implementação de microsserviços e arquiteturas orientadas a eventos. Já trabalhei com serviços em nuvem na Azure e integrei diversas APIs de terceiros para habilitar funcionalidades como mensagens, conectividade social e automação.\nTambém estou explorando como a inteligência artificial pode potencializar automações e melhorar a experiência do usuário em diferentes partes de uma aplicação.\nO que me motiva é o desafio de resolver problemas reais por meio de soluções limpas e escaláveis seja no front-end, back-end ou infraestrutura. Estou em constante aprendizado, me adaptando a novas tecnologias e sempre aberto a oportunidades que me façam crescer e entregar software de impacto."
+  },
+  "skills": {
+    "heading": "Habilidades",
+    "subHeading": "O que eu posso fazer",
+    "front-end": "Front end",
+    "back-end": "Back end",
+    "database": "Banco de dados",
+    "cloud": "Nuvem & Infra",
+    "others": "Outros"
   }
 }

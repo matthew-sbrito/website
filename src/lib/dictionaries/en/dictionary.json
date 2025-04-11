@@ -1,27 +1,48 @@
 {
   "locale": "en",
-  "header": {
-    "home": "Home",
-    "about": "About",
-    "projects": "Projects",
-    "services": "Services",
-    "contact": "Contact",
-    "themeButtonTitle": "Switch theme",
-    "localeButtonTitle": "Switch language"
-  },
   "theme": {
     "light": "Light",
     "dark": "Dark",
     "system": "System"
   },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "resume": "Resume",
+    "themeButtonTitle": "Switch theme",
+    "localeButtonTitle": "Switch language"
+  },
+  "resume": {
+    "link": "/en/cv",
+    "redirectLink": "https://drive.google.com/file/d/1CDhhUL_9MyTxTZ5MhhqGyAHGifp0W3J2/view?usp=sharing"
+  },
   "home": {
-    "greetings": "Hey there 👋,",
-    "me": "It's Matheus Brito",
-    "whatIAm": "I'm",
+    "greetings": "Hey👋,",
+    "me": "It's",
+    "myName": "Matheus Brito",
+    "whatIAm": "I'm a",
     "whatIAmList": [
+      "Software Engineer",
+      "Fullstack Developer",
       "Backend Developer",
-      "Frontend Developer",
-      "Software Engineer"
+      "Frontend Developer"
     ]
+  },
+  "about": {
+    "heading": "About",
+    "subHeading": "Who I Am",
+    "description": "I'm a Full Stack Software Engineer focused on building scalable and high-performing Web applications. I have experience developing modern front-end interfaces using TypeScript, React, and Angular, and robust back-end systems using C#, .NET, ASP.NET. I follow the SOLID principles, CLEAN architecture and write maintainable, testable code that supports long-term scalability.\nMy experience extends across SQL (PostgreSQL, MySQL, SQL Server) and NoSQL (MongoDB, Redis) databases, as well as designing and implementing microservices and event-driven architectures. I've worked with cloud services on Azure and integrated various third-party APIs to enable features like messaging, social connectivity, and automation.\nI'm also exploring how AI can enhance automation and improve user experience across different parts of an application.\nWhat drives me is the challenge of solving real problems through clean, scalable solutions—whether on the front-end, back-end, or infrastructure level. I'm constantly learning and adapting to new technologies, always open to opportunities that push me to grow and deliver impactful software."
+  },
+  "skills": {
+    "heading": "Skills",
+    "subHeading": "What I can do",
+    "front-end": "Front end",
+    "back-end": "Back end",
+    "database": "Database",
+    "cloud": "Cloud & Infra",
+    "others": "Others"
   }
 }

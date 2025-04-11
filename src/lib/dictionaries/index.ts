@@ -2,13 +2,9 @@ import 'server-only';
 
 export type Locales = 'en' | 'pt';
 
-export type DictionaryPageProps<T = unknown> = {
-  params: { lang: Locales };
-} & T;
+export type DictionaryPageProps = { params: { lang: Locales } };
 
-export type DictionaryComponentProps<T = unknown> = {
-  dictionary: Dictionary;
-} & T;
+export type DictionaryComponentProps = { dictionary: Dictionary };
 
 const dictionaries = {
   en: () => import('./en/dictionary.json').then(module => module.default),
