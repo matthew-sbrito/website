@@ -5,55 +5,60 @@ import { DictionaryComponentProps } from '@/dictionaries';
 import { cn } from '@/utils/cn';
 import { groupBy } from '@/utils/group-by';
 
+import { SectionContainer } from './container';
+
 type Props = DictionaryComponentProps;
 
 export function Skills({ dictionary }: Props) {
   const skillsByGroup = groupBy(stackList, x => x.grouping);
 
   return (
-    <section
+    <SectionContainer
       id="skills"
-      className="grid-child min-h-[--view-height] flex flex-col items-center justify-center">
-      <div className="pt-20 w-[90%] flex flex-col gap-6">
-        <div className="flex gap-3">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-main">
-            {dictionary.skills.heading}
-          </h2>
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold italic">
-            {dictionary.skills.subHeading}
-          </h3>
-        </div>
-        <div className="flex flex-col">
-          {skillsByGroup.map((group, index) => (
-            <div
-              key={group.key}
-              className={cn('flex px-6 py-10 items-center bg-main/50', {
-                'bg-main/35': index % 2 === 1,
-              })}>
-              <h4 className="min-w-48 text-lg sm:text-xl lg:text-2xl font-semibold">
-                {dictionary.skills[group.key]}
-              </h4>
-              <div className="flex flex-row gap-4 flex-wrap">
-                {group.sources.map(stack => (
-                  <article
-                    key={stack.name}
-                    className="p-6 flex justify-center items-center gap-4 duration-200 ease-in hover:scale-105">
+      title={dictionary.skills.heading}
+      subtitle={dictionary.skills.subHeading}>
+      <div className="flex flex-col">
+        {skillsByGroup.map((group, index) => (
+          <div
+            key={group.key}
+            className={cn('py-8 flex flex-col lg:flex-row gap-4', {
+              'border-b border-main': index !== skillsByGroup.length - 1,
+            })}>
+            <h4 className="lg:min-w-48 text-lg sm:text-xl lg:text-2xl font-semibold text-main-light italic">
+              {dictionary.skills[group.key]}
+            </h4>
+            <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3">
+              {group.sources.map(stack => (
+                <article
+                  key={stack.name}
+                  className="p-6 flex flex-col justify-center items-center gap-2 duration-200 ease-in bg-foreground/10 rounded-lg hover:text-main hover:bg-main-light/20 dark:hover:bg-main-light/10">
+                  <div className="w-full flex items-center justify-between">
+                    <span className="text-md sm:text-lg lg:text-xl font-semibold">
+                      {stack.name}
+                    </span>
                     <Image
                       src={stack.imageUrl}
                       alt={stack.name}
-                      width={40}
-                      height={40}
+                      width={25}
+                      height={25}
                     />
-                    <span className="text-lg sm:text-xl lg:text-2xl font-semibold">
-                      {stack.name}
-                    </span>
-                  </article>
-                ))}
-              </div>
+                  </div>
+                  {'months' in stack ? (
+                    <div className="w-full">
+                      {stack.months} {dictionary.skills.experienceMonths}
+                    </div>
+                  ) : null}
+                  {'years' in stack ? (
+                    <div className="w-full">
+                      {stack.years} {dictionary.skills.experienceYears}
+                    </div>
+                  ) : null}
+                </article>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </SectionContainer>
   );
 }

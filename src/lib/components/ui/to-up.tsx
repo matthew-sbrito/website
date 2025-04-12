@@ -24,12 +24,12 @@ export function ToUp() {
     <button
       onClick={toUpHandle}
       className={cn(
-        'fixed bottom-5 right-5 p-2 rounded-full bg-main opacity-0 pointer-events-none duration-200 ease-in animate-pulse-bordered',
+        'fixed bottom-5 right-5 p-2 rounded-full bg-main opacity-0 shadow-sm pointer-events-none duration-200 ease-in animate-pulse-bordered',
         {
           'opacity-100 pointer-events-auto cursor-pointer': show,
         }
       )}>
-      <ChevronUpIcon size={35} />
+      <ChevronUpIcon size={35} className="text-white" />
     </button>,
     document.body
   );

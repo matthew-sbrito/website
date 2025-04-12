@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
+import { MenuIcon } from 'lucide-react';
+
 import { DictionaryComponentProps } from '@/dictionaries';
 
 import { LinksSection } from './links';
@@ -56,7 +58,7 @@ export function Header({ dictionary }: Props) {
               />
             </div>
           </a>
-          <div className="flex gap-3 items-center">
+          <div className="hidden gap-3 items-center lg:flex">
             <LinksSection dictionary={dictionary} />
             <ThemeButton
               dictionary={dictionary}
@@ -68,6 +70,9 @@ export function Header({ dictionary }: Props) {
               onClick={() => setMenuLocaleOpen(true)}
               ref={localeRef}
             />
+          </div>
+          <div className="flex gap-3 items-center lg:hidden">
+            <MenuIcon size={20}></MenuIcon>
           </div>
         </nav>
       </header>

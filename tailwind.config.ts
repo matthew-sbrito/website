@@ -12,8 +12,8 @@ const config: Config = {
     },
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        background: 'rgb(var(--background-rgb) / <alpha-value>)',
+        foreground: 'rgb(var(--foreground-rgb) / <alpha-value>)',
         main: 'rgb(var(--main-rgb) / <alpha-value>)',
         'main-dark': 'rgb(var(--main-dark-rgb) / <alpha-value>)',
         'main-light': 'rgb(var(--main-light-rgb) / <alpha-value>)',

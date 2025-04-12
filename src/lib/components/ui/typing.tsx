@@ -62,7 +62,7 @@ export function Typing({ words, className, ...props }: Props) {
         className
       )}
       {...props}>
-      {currentWord}
+      {currentWord || '_'}
     </span>
   );
 }

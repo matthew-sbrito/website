@@ -26,8 +26,8 @@ type RootProps = DictionaryPageProps & {
 
 export default function RootLayout({ children, params }: RootProps) {
   return (
-    <html suppressHydrationWarning lang={params.lang} className="scroll-smooth">
-      <body className={`${roboto.className}`}>
+    <html suppressHydrationWarning lang={params.lang}>
+      <body className={roboto.className}>
         <ThemeProvider enableSystem={true}>{children}</ThemeProvider>
       </body>
     </html>
