@@ -9,8 +9,6 @@ import { ChevronUpIcon } from 'lucide-react';
 export function ToTop() {
   const [show, setShow] = useState(false);
 
-  useEffect(() => console.log(show), [show]);
-
   const handleScroll = useCallback(() => {
     if (!show && window.scrollY > 200) {
       setShow(true);
@@ -37,14 +35,14 @@ export function ToTop() {
     <AnimatePresence mode="wait">
       {show && (
         <motion.div
-          className="fixed right-4 bottom-4 z-20"
+          className="fixed bottom-4 right-4 z-20"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}>
           <button
             onClick={toTop}
-            className="p-2 rounded-full bg-main shadow-sm animate-pulse-bordered">
+            className="animate-pulse-bordered rounded-full bg-main p-2 shadow-sm">
             <ChevronUpIcon size={35} className="text-white" />
           </button>
         </motion.div>

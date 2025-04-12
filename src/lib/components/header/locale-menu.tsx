@@ -3,11 +3,11 @@ import { useRouter } from 'next/navigation';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
+import { Backdrop } from '@/components/ui/backdrop';
+
 import { menuAnimation } from '@/constants/animations';
 import { DictionaryComponentProps, Locales } from '@/dictionaries';
 import { cn } from '@/utils/cn';
-
-import { Backdrop } from '@/components/ui/backdrop';
 
 import { HeaderMenuProps, menuHeaderClassName } from './common';
 
@@ -42,7 +42,7 @@ export function LocaleMenu({ opened, toggle, x, scrollY, dictionary }: Props) {
             }}
             {...menuAnimation}>
             <button
-              className={cn('flex gap-2 items-center text-xs font-semibold', {
+              className={cn('flex items-center gap-2 text-xs font-semibold', {
                 'text-main': dictionary.locale === 'en',
               })}
               onClick={() => switchLocale('en')}>
@@ -55,7 +55,7 @@ export function LocaleMenu({ opened, toggle, x, scrollY, dictionary }: Props) {
               English
             </button>
             <button
-              className={cn('flex gap-2 items-center text-xs font-semibold', {
+              className={cn('flex items-center gap-2 text-xs font-semibold', {
                 'text-main': dictionary.locale === 'pt',
               })}
               onClick={() => switchLocale('pt')}>

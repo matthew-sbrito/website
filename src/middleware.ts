@@ -1,5 +1,6 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
+
 import { Locales } from './lib/dictionaries';
 
 const locales: Locales[] = ['en', 'pt'];

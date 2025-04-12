@@ -9,7 +9,7 @@ export function LocaleButton({ dictionary, ...props }: Props) {
   return (
     <button
       title={dictionary.header.localeButtonTitle}
-      className="flex items-center gap-1 max-h-min"
+      className="flex max-h-min items-center gap-1"
       {...props}>
       {dictionary.locale === 'pt' ? (
         <Image

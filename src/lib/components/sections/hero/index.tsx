@@ -9,7 +9,7 @@ export function Hero({ dictionary }: Props) {
   return (
     <section
       id="home"
-      className="grid-child min-h-[--view-height] flex flex-col lg:flex-row items-center justify-center gap-2">
+      className="grid-child flex min-h-[--view-height] flex-col items-center justify-center gap-2 lg:flex-row">
       <HeroText dictionary={dictionary} />
       <Me />
     </section>

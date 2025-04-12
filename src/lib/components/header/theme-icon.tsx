@@ -9,7 +9,7 @@ import {
 
 export function ThemeIcon(props: ComponentProps<'svg'> & LucideProps) {
   return (
-    <div className="relative w-[18px] h-[18px]">
+    <div className="relative h-[18px] w-[18px]">
       <SunIcon
         className="sun-icon absolute fill-foreground group-hover:animate-spin"
         {...props}

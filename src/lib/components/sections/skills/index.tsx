@@ -23,10 +23,10 @@ export function Skills({ dictionary }: Props) {
             className={cn('flex flex-col gap-4 pb-4 lg:flex-row lg:py-8', {
               'border-b border-main': groupIndex !== skillsByGroup.length - 1,
             })}>
-            <h4 className="lg:min-w-48 text-lg sm:text-xl lg:text-2xl font-semibold text-main-light italic">
+            <h4 className="text-lg font-semibold italic text-main-light sm:text-xl lg:min-w-48 lg:text-2xl">
               {dictionary.skills[group.key]}
             </h4>
-            <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3">
+            <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3">
               {group.sources.map((stack, itemIndex) => (
                 <SkillCard
                   key={stack.name}

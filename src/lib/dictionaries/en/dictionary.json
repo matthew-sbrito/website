@@ -60,7 +60,11 @@
     "errors": {
       "name": "The name must have at least 3 chars.",
       "email": "Invalid email.",
-      "message": "The message must have at least 3 chars."
+      "message": "The message must have at least 3 chars.",
+      "request": "Error trying send email."
+    },
+    "success": {
+      "request": "Email send successfully."
     },
     "send": "Send",
     "sending": "Sending..."

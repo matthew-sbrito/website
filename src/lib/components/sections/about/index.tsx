@@ -12,7 +12,7 @@ export function About({ dictionary }: Props) {
       id="about"
       title={dictionary.about.title}
       subtitle={dictionary.about.subtitle}>
-      <div className="flex flex-col-reverse 2xl:flex-row items-center gap-12">
+      <div className="flex flex-col-reverse items-center gap-12 2xl:flex-row">
         <AboutText description={dictionary.about.description} />
         <AboutImage />
       </div>

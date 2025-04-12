@@ -14,13 +14,14 @@
     "@trivago/prettier-plugin-sort-imports"
   ],
   "importOrder": [
-    "^(next|react)",
-    "framer-motion(/.*|$)",
+    "^(next|react)(.*)",
+    "^@([^/].*|$)",
+    "framer-motion(.*)",
     "lucide-react(.*)",
-    "^(@/models|@/dictionaries|@/constants|@/utils|@/hooks|@/schemas|@/store)(/.*|$)",
-    "^(@/components)(/.*|$)",
-    "[./|~/]",
-    "^\\w"
+    "^@/components(/.*|$)",
+    "^@/.*",
+    "^\\w",
+    "[./]"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

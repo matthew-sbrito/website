@@ -60,13 +60,13 @@ export function LinksSection({ dictionary, children }: Props) {
   }, []);
 
   return (
-    <ul className="flex flex-col lg:flex-row items-center gap-4">
+    <ul className="flex flex-col items-center gap-4 lg:flex-row">
       {SECTIONS.map(section => (
         <li key={section.id}>
           <a
             suppressHydrationWarning
             href={section.link}
-            className={cn('font-semibold text-sm transition duration-300', {
+            className={cn('text-sm font-semibold transition duration-300', {
               'text-main': section.id === sectionId,
             })}>
             {dictionary.header[section.id]}
@@ -77,7 +77,7 @@ export function LinksSection({ dictionary, children }: Props) {
         <a
           href={dictionary.resume.link}
           target="_blank"
-          className="font-semibold text-sm">
+          className="text-sm font-semibold">
           {dictionary.header.resume}
         </a>
       </li>

@@ -57,9 +57,13 @@
       "message": "Mensagem"
     },
     "errors": {
-      "name": "The name must have at least 3 chars.",
-      "email": "Invalid email.",
-      "message": "The message must have at least 3 chars."
+      "name": "O nome precisa ter no minimo 3 caracters.",
+      "email": "Email invalidoo.",
+      "message": "A mensangem precisa ter no minimo 3 caracters.",
+      "request": "Erro ao tentar enviar email."
+    },
+    "success": {
+      "request": "Email enviado com sucessoo."
     },
     "send": "Enviar",
     "sending": "Enviando..."

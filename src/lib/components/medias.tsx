@@ -2,11 +2,11 @@ import Image from 'next/image';
 
 export function SocialMedias() {
   return (
-    <div className="flex items-center gap-2 lg:gap-4 px-2 lg:px-3 py-1 lg:py-2 bg-main max-w-max rounded-lg">
+    <div className="flex max-w-max items-center gap-2 rounded-lg bg-main px-2 py-1 lg:gap-4 lg:px-3 lg:py-2">
       <a href="https://linkedin.com/in/matthew-sbrito" target="_blank">
-        <div className="relative w-5 h-5">
+        <div className="relative h-5 w-5">
           <Image
-            className="invert pb-1"
+            className="pb-1 invert"
             src="/images/contact/linkedin.svg"
             alt="LinkedIn"
             fill
@@ -14,7 +14,7 @@ export function SocialMedias() {
         </div>
       </a>
       <a href="http://wa.me/5577998442230" target="_blank">
-        <div className="relative w-4 h-4 lg:w-5 lg:h-5">
+        <div className="relative h-4 w-4 lg:h-5 lg:w-5">
           <Image
             className="invert"
             src="/images/contact/whatsapp.svg"
@@ -24,7 +24,7 @@ export function SocialMedias() {
         </div>
       </a>
       <a href="mailto:matheusdevback@gmail.com" target="_blank">
-        <div className="relative w-5 h-5 lg:w-6 lg:h-6">
+        <div className="relative h-5 w-5 lg:h-6 lg:w-6">
           <Image
             className="invert"
             src="/images/contact/email.svg"
@@ -34,7 +34,7 @@ export function SocialMedias() {
         </div>
       </a>
       <a href="http://github.com/matthew-sbrito" target="_blank">
-        <div className="relative w-4 h-4 lg:w-5 lg:h-5">
+        <div className="relative h-4 w-4 lg:h-5 lg:w-5">
           <Image
             className="invert"
             src="/images/contact/github.svg"

@@ -10,7 +10,7 @@ export function ThemeButton({ dictionary, ...props }: Props) {
   return (
     <button
       title={dictionary.header.themeButtonTitle}
-      className="group flex gap-1 max-h-min"
+      className="group flex max-h-min gap-1"
       {...props}>
       <ThemeIcon size={18} />
     </button>

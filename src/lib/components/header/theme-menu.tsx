@@ -12,11 +12,11 @@ import {
   SunIcon,
 } from 'lucide-react';
 
+import { Backdrop } from '@/components/ui/backdrop';
+
 import { menuAnimation } from '@/constants/animations';
 import { DictionaryComponentProps } from '@/dictionaries';
 import { cn } from '@/utils/cn';
-
-import { Backdrop } from '@/components/ui/backdrop';
 
 import { HeaderMenuProps, menuHeaderClassName } from './common';
 
@@ -25,7 +25,7 @@ type Props = DictionaryComponentProps & HeaderMenuProps;
 type Theme = 'dark' | 'light' | 'system';
 
 export function ThemeMenu({ dictionary, opened, toggle, x, scrollY }: Props) {
-  const { theme: currentTheme, setTheme, themes } = useTheme();
+  const { resolvedTheme, setTheme, themes } = useTheme();
 
   return (
     <Backdrop opened={opened} transparent={true} toggle={toggle}>
@@ -41,8 +41,8 @@ export function ThemeMenu({ dictionary, opened, toggle, x, scrollY }: Props) {
             {(themes as Theme[]).map(theme => (
               <button
                 key={theme}
-                className={cn('flex gap-2 items-center text-xs font-semibold', {
-                  'text-main': currentTheme == theme,
+                className={cn('flex items-center gap-2 text-xs font-semibold', {
+                  'text-main': resolvedTheme == theme,
                 })}
                 onClick={() => setTheme(theme)}
                 suppressHydrationWarning={true}>

@@ -17,11 +17,11 @@ export function SectionContainer({ id, title, subtitle, children }: Props) {
   return (
     <section
       id={id}
-      className="pt-12 lg:pt-0 grid-child min-h-[--view-height] flex flex-col items-center justify-center">
-      <div className="w-[90%] flex flex-col gap-5">
+      className="grid-child flex min-h-[--view-height] flex-col items-center justify-center pt-12 lg:pt-0">
+      <div className="flex w-[90%] flex-col gap-5">
         <motion.div className="flex flex-col" {...fromLeftAnimation}>
-          <h2 className="text-md sm:text-lg lg:text-xl text-main">{title}</h2>
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold italic">
+          <h2 className="text-md text-main sm:text-lg lg:text-xl">{title}</h2>
+          <h3 className="text-xl font-bold italic sm:text-2xl lg:text-3xl">
             {subtitle}
           </h3>
         </motion.div>

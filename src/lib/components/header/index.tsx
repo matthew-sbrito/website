@@ -60,7 +60,7 @@ export function Header({ dictionary }: Props) {
       <header className="grid-container sticky top-0 z-20 h-[--header-height] gap-2 bg-gradient-to-b from-background/75 to-transparent md:pt-1 print:h-0">
         <nav className="grid-child flex h-full items-center justify-between border bg-card/75 px-3 py-1 text-card-foreground backdrop-blur-md md:rounded-2xl print:hidden">
           <a href="#home">
-            <div className="relative w-[2rem] h-[2rem] rounded-full overflow-hidden">
+            <div className="relative h-[2rem] w-[2rem] overflow-hidden rounded-full">
               <Image
                 className="object-cover"
                 src="/images/me.jpg"
@@ -76,7 +76,7 @@ export function Header({ dictionary }: Props) {
                 <AnimatePresence>
                   {menuMobileOpen && (
                     <motion.div
-                      className="z-40 p-4 fixed bg-background w-1/2 top-0 right-0 h-dvh"
+                      className="fixed right-0 top-0 z-40 h-dvh w-1/2 bg-background p-4"
                       {...fromRightAnimation}>
                       <LinksSection dictionary={dictionary} />
                     </motion.div>
@@ -99,7 +99,7 @@ export function Header({ dictionary }: Props) {
               ref={localeRef}
             />
             {/* Mobile toggle menu */}
-            <div className="flex gap-3 items-center lg:hidden">
+            <div className="flex items-center gap-3 lg:hidden">
               <MenuIcon
                 size={20}
                 onClick={() => setMobileMenu(current => !current)}></MenuIcon>
