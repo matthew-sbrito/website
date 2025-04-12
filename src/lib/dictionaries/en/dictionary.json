@@ -31,16 +31,16 @@
       "Frontend Developer"
     ],
     "chips": ["+6 years of experience"],
-    "getInTouch": "Let's get in touch"
+    "getInTouch": "Get in touch"
   },
   "about": {
-    "heading": "../about",
-    "subHeading": "Who I Am",
+    "title": "../about",
+    "subtitle": "Who I Am",
     "description": "I'm a Full Stack Software Engineer focused on building scalable and high-performing Web applications. I have experience developing modern front-end interfaces using TypeScript, React, and Angular, and robust back-end systems using C#, .NET, ASP.NET. I follow the SOLID principles, CLEAN architecture and write maintainable, testable code that supports long-term scalability.\nMy experience extends across SQL (PostgreSQL, MySQL, SQL Server) and NoSQL (MongoDB, Redis) databases, as well as designing and implementing microservices and event-driven architectures. I've worked with cloud services on Azure and integrated various third-party APIs to enable features like messaging, social connectivity, and automation.\nI'm also exploring how AI can enhance automation and improve user experience across different parts of an application.\nWhat drives me is the challenge of solving real problems through clean, scalable solutions—whether on the front-end, back-end, or infrastructure level. I'm constantly learning and adapting to new technologies, always open to opportunities that push me to grow and deliver impactful software."
   },
   "skills": {
-    "heading": "../skills",
-    "subHeading": "What I can do",
+    "title": "../skills",
+    "subtitle": "What I can do",
     "front-end": "Front end",
     "back-end": "Back end",
     "database": "Database",
@@ -48,5 +48,21 @@
     "others": "Others",
     "experienceMonths": "months of experience",
     "experienceYears": "years of experience"
+  },
+  "contact": {
+    "title": "../contact",
+    "subtitle": "Get in touch",
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
+    },
+    "errors": {
+      "name": "The name must have at least 3 chars.",
+      "email": "Invalid email.",
+      "message": "The message must have at least 3 chars."
+    },
+    "send": "Send",
+    "sending": "Sending..."
   }
 }

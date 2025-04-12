@@ -14,13 +14,13 @@ export function Skills({ dictionary }: Props) {
   return (
     <SectionContainer
       id="skills"
-      title={dictionary.skills.heading}
-      subtitle={dictionary.skills.subHeading}>
-      <div className="flex flex-col">
+      title={dictionary.skills.title}
+      subtitle={dictionary.skills.subtitle}>
+      <div className="flex flex-col gap-2">
         {skillsByGroup.map((group, groupIndex) => (
           <div
             key={group.key}
-            className={cn('lg:py-8 flex flex-col lg:flex-row gap-4', {
+            className={cn('flex flex-col gap-4 pb-4 lg:flex-row lg:py-8', {
               'border-b border-main': groupIndex !== skillsByGroup.length - 1,
             })}>
             <h4 className="lg:min-w-48 text-lg sm:text-xl lg:text-2xl font-semibold text-main-light italic">

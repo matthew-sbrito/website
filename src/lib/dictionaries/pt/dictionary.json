@@ -33,13 +33,13 @@
     "getInTouch": "Entre em contato"
   },
   "about": {
-    "heading": "../sobre",
-    "subHeading": "Quem sou eu",
+    "title": "../sobre",
+    "subtitle": "Quem sou eu",
     "description": "Sou um Engenheiro de Software Full Stack focado na construção de aplicações Web escaláveis e de alta performance. Tenho experiência no desenvolvimento de interfaces modernas de front-end utilizando TypeScript, React e Angular, além de sistemas robustos de back-end com C#, .NET e ASP.NET. Sigo os princípios SOLID, a arquitetura CLEAN e escrevo código sustentável, testável e preparado para escalar no longo prazo.\nMinha experiência abrange bancos de dados SQL (PostgreSQL, MySQL, SQL Server) e NoSQL (MongoDB, Redis), bem como o design e a implementação de microsserviços e arquiteturas orientadas a eventos. Já trabalhei com serviços em nuvem na Azure e integrei diversas APIs de terceiros para habilitar funcionalidades como mensagens, conectividade social e automação.\nTambém estou explorando como a inteligência artificial pode potencializar automações e melhorar a experiência do usuário em diferentes partes de uma aplicação.\nO que me motiva é o desafio de resolver problemas reais por meio de soluções limpas e escaláveis seja no front-end, back-end ou infraestrutura. Estou em constante aprendizado, me adaptando a novas tecnologias e sempre aberto a oportunidades que me façam crescer e entregar software de impacto."
   },
   "skills": {
-    "heading": "../habilidades",
-    "subHeading": "O que eu posso fazer",
+    "title": "../habilidades",
+    "subtitle": "O que eu posso fazer",
     "front-end": "Front end",
     "back-end": "Back end",
     "database": "Banco de dados",
@@ -47,5 +47,21 @@
     "others": "Outros",
     "experienceMonths": "meses de experiência",
     "experienceYears": "anos de experiência"
+  },
+  "contact": {
+    "title": "../contato",
+    "subtitle": "Entre em contato",
+    "labels": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem"
+    },
+    "errors": {
+      "name": "The name must have at least 3 chars.",
+      "email": "Invalid email.",
+      "message": "The message must have at least 3 chars."
+    },
+    "send": "Enviar",
+    "sending": "Enviando..."
   }
 }
