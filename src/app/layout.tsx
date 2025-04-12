@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     description:
       'Portfolio of Matheus Brito, a software developer focused on modern technologies such as Next.js, React, and .NET.',
     images: {
-      url: '/images/me.png',
+      url: '/images/me.jpg',
       alt: "Matheus' profile picture",
     },
   },
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     description:
       'Web developer focused on performance, UX, and results. Check out my portfolio and projects.',
     images: {
-      url: '/images/me.png',
+      url: '/images/me.jpg',
       alt: "Matheus' profile picture",
     },
   },
