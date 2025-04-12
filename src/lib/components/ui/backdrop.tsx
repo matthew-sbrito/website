@@ -26,6 +26,8 @@ type Props = {
 };
 
 export function Backdrop({ opened, transparent, toggle, children }: Props) {
+  if (typeof document === 'undefined') return null;
+
   return createPortal(
     <div className="z-50">
       <motion.div

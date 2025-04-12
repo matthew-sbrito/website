@@ -26,9 +26,11 @@ type RootProps = DictionaryPageProps & {
   children: React.ReactNode;
 };
 
-export default function RootLayout({ children, params }: RootProps) {
+export default async function RootLayout({ children, params }: RootProps) {
+  const { lang } = await params;
+
   return (
-    <html suppressHydrationWarning lang={params.lang}>
+    <html suppressHydrationWarning lang={lang}>
       <body className={roboto.className}>
         <ToTop />
         <ThemeProvider enableSystem={true}>{children}</ThemeProvider>

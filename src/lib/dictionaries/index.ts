@@ -11,6 +11,10 @@ const dictionaries = {
   pt: () => import('./pt/dictionary.json').then(module => module.default),
 };
 
-export const getDictionary = async (locale: Locales) => dictionaries[locale]();
+export const getDictionary = async (locale: Locales) => {
+  const dictionary =
+    locale in dictionaries ? dictionaries[locale] : dictionaries.en;
+  return dictionary();
+};
 
 export type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
