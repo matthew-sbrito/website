@@ -10,14 +10,44 @@ export const scaleAnimation = {
   exit: { opacity: 0, scale: 0 },
 };
 
-export const fadeUpYAnimation = {
+export const fromTopAnimation = {
+  initial: { opacity: 0, y: -50 },
+  whileInView: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -50 },
+};
+
+export const fromBottomAnimation = {
   initial: { opacity: 0, y: 50 },
   whileInView: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: 50 },
 };
 
-export const fadeUpXAnimation: AnimationProps = {
+export const fromLeftAnimation: AnimationProps = {
   initial: { opacity: 0, x: -50 },
   whileInView: { opacity: 1, x: 0 },
   exit: { opacity: 0, x: -50 },
+};
+
+export const fromRightAnimation: AnimationProps = {
+  initial: { opacity: 0, x: 50 },
+  whileInView: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 50 },
+};
+
+export const menuAnimation: AnimationProps = {
+  initial: {
+    opacity: 0,
+    scale: 0,
+    pointerEvents: 'none',
+  },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    pointerEvents: 'auto',
+  },
+  exit: {
+    opacity: 0,
+    scale: 0,
+    pointerEvents: 'none',
+  },
 };

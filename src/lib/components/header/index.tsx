@@ -3,10 +3,19 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
+import { AnimatePresence, motion } from 'framer-motion';
+
 import { MenuIcon } from 'lucide-react';
 
+import {
+  fromBottomAnimation,
+  fromLeftAnimation,
+  fromRightAnimation,
+  fromTopAnimation,
+} from '@/constants/animations';
 import { DictionaryComponentProps } from '@/dictionaries';
 
+import { Backdrop } from '../ui/backdrop';
 import { LinksSection } from './links';
 import { LocaleButton } from './locale-button';
 import { LocaleMenu } from './locale-menu';
@@ -17,6 +26,8 @@ type Props = DictionaryComponentProps;
 
 export function Header({ dictionary }: Props) {
   const [scrollY, setScrollY] = useState(0);
+
+  const [menuMobileOpen, setMobileMenu] = useState(false);
 
   const [menuLocaleOpen, setMenuLocaleOpen] = useState(false);
   const localeRef = useRef<HTMLButtonElement>(null);
@@ -36,13 +47,13 @@ export function Header({ dictionary }: Props) {
   }, []);
 
   useEffect(() => {
-    if (menuLocaleOpen || menuThemeOpen) {
+    if (menuLocaleOpen || menuThemeOpen || menuMobileOpen) {
       window.document.body.style.overflowY = 'hidden';
       return;
     }
 
     window.document.body.style.overflowY = 'auto';
-  }, [menuLocaleOpen, menuThemeOpen]);
+  }, [menuLocaleOpen, menuThemeOpen, menuMobileOpen]);
 
   return (
     <>
@@ -58,29 +69,41 @@ export function Header({ dictionary }: Props) {
               />
             </div>
           </a>
-          {/* Desktop menu */}
-          <div className="absolute lg:relative">
-            <LinksSection dictionary={dictionary}>
-            <li className='p-1'>
-              <ThemeButton
+
+          <div className="flex items-center gap-4">
+            <div className="lg:hidden">
+              <Backdrop opened={menuMobileOpen} toggle={setMobileMenu}>
+                <AnimatePresence>
+                  {menuMobileOpen && (
+                    <motion.div
+                      className="z-40 p-4 fixed bg-background w-1/2 top-0 right-0 h-dvh"
+                      {...fromRightAnimation}>
+                      <LinksSection dictionary={dictionary} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </Backdrop>
+            </div>
+
+            <div className="hidden lg:block">
+              <LinksSection dictionary={dictionary} />
+            </div>
+            <ThemeButton
               dictionary={dictionary}
               onClick={() => setMenuThemeOpen(true)}
               ref={themeRef}
             />
-            </li>
-            <li className='p-1'>
-              <LocaleButton
+            <LocaleButton
               dictionary={dictionary}
               onClick={() => setMenuLocaleOpen(true)}
               ref={localeRef}
             />
-            </li>
-            </LinksSection>            
-          </div>
-
-          {/* Mobile toggle menu */}
-          <div className="flex gap-3 items-center lg:hidden">
-            <MenuIcon size={20}></MenuIcon>
+            {/* Mobile toggle menu */}
+            <div className="flex gap-3 items-center lg:hidden">
+              <MenuIcon
+                size={20}
+                onClick={() => setMobileMenu(current => !current)}></MenuIcon>
+            </div>
           </div>
         </nav>
       </header>

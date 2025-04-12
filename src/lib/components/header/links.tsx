@@ -5,10 +5,10 @@ import { ReactNode, useEffect, useState } from 'react';
 import { SECTIONS } from '@/constants/sections';
 import { DictionaryComponentProps } from '@/dictionaries';
 import { cn } from '@/utils/cn';
-import { checkIsElement } from '@/utils/dom';
+import { checkIsElement, isVisibleInContainer } from '@/utils/dom';
 
 type Props = DictionaryComponentProps & {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 export function LinksSection({ dictionary, children }: Props) {
@@ -27,7 +27,22 @@ export function LinksSection({ dictionary, children }: Props) {
     );
   }
 
+  function checkCurrentSection() {
+    const elements = SECTIONS.map(x => document.getElementById(x.id)).filter(
+      checkIsElement
+    );
+
+    for (const element of elements) {
+      if (isVisibleInContainer(document.documentElement, element)) {
+        setSectionId(element.id);
+        return;
+      }
+    }
+  }
+
   useEffect(() => {
+    checkCurrentSection();
+
     const elements = SECTIONS.map(x => document.getElementById(x.id)).filter(
       checkIsElement
     );
@@ -45,7 +60,7 @@ export function LinksSection({ dictionary, children }: Props) {
   }, []);
 
   return (
-    <ul className="flex flex-col lg:flex-row items-center gap-3 p-2">
+    <ul className="flex flex-col lg:flex-row items-center gap-4">
       {SECTIONS.map(section => (
         <li key={section.id}>
           <a

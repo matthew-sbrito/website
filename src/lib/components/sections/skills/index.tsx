@@ -20,7 +20,7 @@ export function Skills({ dictionary }: Props) {
         {skillsByGroup.map((group, groupIndex) => (
           <div
             key={group.key}
-            className={cn('py-8 flex flex-col lg:flex-row gap-4', {
+            className={cn('lg:py-8 flex flex-col lg:flex-row gap-4', {
               'border-b border-main': groupIndex !== skillsByGroup.length - 1,
             })}>
             <h4 className="lg:min-w-48 text-lg sm:text-xl lg:text-2xl font-semibold text-main-light italic">
