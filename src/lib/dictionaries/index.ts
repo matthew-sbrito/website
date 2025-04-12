@@ -2,7 +2,7 @@ import 'server-only';
 
 export type Locales = 'en' | 'pt';
 
-export type DictionaryPageProps = { params: { lang: Locales } };
+export type DictionaryPageProps = { params: Promise<{ lang: Locales }> };
 
 export type DictionaryComponentProps = { dictionary: Dictionary };
 

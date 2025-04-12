@@ -8,10 +8,11 @@
     /* Size variables */
     --header-height: 3.25rem;
     --footer-height: 12rem;
-    --view-height: calc(100dvh - var(--header-height));
+    --view-height: 97.5dvh;
 
     @media (min-width: 768px) {
       --footer-height: 4rem;
+      --view-height: calc(95dvh - var(--header-height));
     }
 
     /* Main colors */
@@ -92,10 +93,10 @@
 
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--scrollbar) / 45%);
+  }
 
-    &:hover {
-      background: hsl(var(--scrollbar) / 85%);
-    }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--scrollbar) / 85%);
   }
 
   /* Set Container */
@@ -104,7 +105,7 @@
   }
 
   .grid-child {
-    @apply col-span-12 col-start-1 md:col-span-8 md:col-start-3;
+    @apply col-span-12 col-start-1 lg:col-span-8 lg:col-start-3;
   }
 
   /* Theme Icon Active */
@@ -118,27 +119,23 @@
     pointer-events: none;
   }
 
-  [data-theme='light'] {
-    .sun-icon {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .desktop-icon {
-      opacity: 0;
-      pointer-events: none;
-    }
+  [data-theme='light'] .sun-icon {
+    opacity: 1;
+    pointer-events: auto;
   }
 
-  [data-theme='dark'] {
-    .moon-icon {
-      opacity: 1;
-      pointer-events: auto;
-    }
+  [data-theme='light'] .desktop-icon {
+    opacity: 0;
+    pointer-events: none;
+  }
 
-    .desktop-icon {
-      opacity: 0;
-      pointer-events: none;
-    }
+  [data-theme='dark'] .moon-icon {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  [data-theme='dark'] .desktop-icon {
+    opacity: 0;
+    pointer-events: none;
   }
 }

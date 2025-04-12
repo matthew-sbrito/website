@@ -1,15 +1,17 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { SECTIONS } from '@/constants/sections';
 import { DictionaryComponentProps } from '@/dictionaries';
 import { cn } from '@/utils/cn';
 import { checkIsElement } from '@/utils/dom';
 
-type Props = DictionaryComponentProps;
+type Props = DictionaryComponentProps & {
+  children: ReactNode;
+};
 
-export function LinksSection({ dictionary }: Props) {
+export function LinksSection({ dictionary, children }: Props) {
   const [sectionId, setSectionId] = useState('home');
 
   function onIntersection(entries: IntersectionObserverEntry[]) {
@@ -43,7 +45,7 @@ export function LinksSection({ dictionary }: Props) {
   }, []);
 
   return (
-    <ul className="flex gap-5 p-2">
+    <ul className="flex flex-col lg:flex-row items-center gap-3 p-2">
       {SECTIONS.map(section => (
         <li key={section.id}>
           <a
@@ -64,6 +66,7 @@ export function LinksSection({ dictionary }: Props) {
           {dictionary.header.resume}
         </a>
       </li>
+      {children}
     </ul>
   );
 }

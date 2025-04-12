@@ -4,6 +4,8 @@ import { Roboto } from 'next/font/google';
 
 import { DictionaryPageProps } from '@/dictionaries';
 
+import { ToTop } from '@/components/ui/to-top';
+
 import './globals.css';
 
 const roboto = Roboto({
@@ -28,6 +30,7 @@ export default function RootLayout({ children, params }: RootProps) {
   return (
     <html suppressHydrationWarning lang={params.lang}>
       <body className={roboto.className}>
+        <ToTop />
         <ThemeProvider enableSystem={true}>{children}</ThemeProvider>
       </body>
     </html>

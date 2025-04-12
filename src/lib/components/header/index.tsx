@@ -58,19 +58,27 @@ export function Header({ dictionary }: Props) {
               />
             </div>
           </a>
-          <div className="hidden gap-3 items-center lg:flex">
-            <LinksSection dictionary={dictionary} />
-            <ThemeButton
+          {/* Desktop menu */}
+          <div className="absolute lg:relative">
+            <LinksSection dictionary={dictionary}>
+            <li className='p-1'>
+              <ThemeButton
               dictionary={dictionary}
               onClick={() => setMenuThemeOpen(true)}
               ref={themeRef}
             />
-            <LocaleButton
+            </li>
+            <li className='p-1'>
+              <LocaleButton
               dictionary={dictionary}
               onClick={() => setMenuLocaleOpen(true)}
               ref={localeRef}
             />
+            </li>
+            </LinksSection>            
           </div>
+
+          {/* Mobile toggle menu */}
           <div className="flex gap-3 items-center lg:hidden">
             <MenuIcon size={20}></MenuIcon>
           </div>

@@ -27,7 +27,7 @@ type Props = {
 
 export function Backdrop({ opened, transparent, toggle, children }: Props) {
   return createPortal(
-    <>
+    <div>
       <motion.div
         className={cn('fixed w-screen h-screen inset-0 z-30', {
           'bg-black/30': !transparent,
@@ -37,7 +37,7 @@ export function Backdrop({ opened, transparent, toggle, children }: Props) {
         variants={backdropVariants}
         onClick={() => toggle(false)}></motion.div>
       {children}
-    </>,
+    </div>,
     document.body
   );
 }
