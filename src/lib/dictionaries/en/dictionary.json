@@ -30,7 +30,6 @@
       "Backend Developer",
       "Frontend Developer"
     ],
-    "chips": ["+6 years of experience"],
     "getInTouch": "Get in touch"
   },
   "about": {
@@ -46,8 +45,7 @@
     "database": "Database",
     "cloud": "Cloud & Infra",
     "others": "Others",
-    "experienceMonths": "months of experience",
-    "experienceYears": "years of experience"
+    "experience": "of experience"
   },
   "contact": {
     "title": "../contact",

@@ -21,7 +21,7 @@ export function Contact({ dictionary }: Props) {
         <div className="flex flex-col items-center justify-center">
           <ContactImage />
           <div className="mt-2">
-            <SocialMedias />
+            <SocialMedias dictionary={dictionary} />
           </div>
           <div className="flex flex-col gap-2"></div>
         </div>

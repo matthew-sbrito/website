@@ -8,10 +8,11 @@ import { cn } from '@/utils/cn';
 import { checkIsElement, isVisibleInContainer } from '@/utils/dom';
 
 type Props = DictionaryComponentProps & {
+  afterSection?: () => void;
   children?: ReactNode;
 };
 
-export function LinksSection({ dictionary, children }: Props) {
+export function LinksSection({ dictionary, afterSection, children }: Props) {
   const [sectionId, setSectionId] = useState('home');
 
   function onIntersection(entries: IntersectionObserverEntry[]) {
@@ -66,6 +67,7 @@ export function LinksSection({ dictionary, children }: Props) {
           <a
             suppressHydrationWarning
             href={section.link}
+            onClick={afterSection}
             className={cn('text-sm font-semibold transition duration-300', {
               'text-main': section.id === sectionId,
             })}>
@@ -76,6 +78,7 @@ export function LinksSection({ dictionary, children }: Props) {
       <li>
         <a
           href={dictionary.resume.link}
+          onClick={afterSection}
           target="_blank"
           className="text-sm font-semibold">
           {dictionary.header.resume}

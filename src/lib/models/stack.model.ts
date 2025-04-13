@@ -1,12 +1,6 @@
-type StackProps = {
+export type StackModel = {
   name: string;
   imageUrl: string;
   grouping: 'front-end' | 'back-end' | 'database' | 'cloud' | 'others';
+  startedAt: Date;
 };
-type ExperienceInMonths = { months: number };
-
-type ExperienceInYears = { years: number };
-
-type Experience = ExperienceInMonths | ExperienceInYears;
-
-export type StackModel = StackProps & Experience;

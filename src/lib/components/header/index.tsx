@@ -7,12 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import { MenuIcon } from 'lucide-react';
 
-import {
-  fromBottomAnimation,
-  fromLeftAnimation,
-  fromRightAnimation,
-  fromTopAnimation,
-} from '@/constants/animations';
+import { fromRightAnimation } from '@/constants/animations';
 import { DictionaryComponentProps } from '@/dictionaries';
 
 import { Backdrop } from '../ui/backdrop';
@@ -27,7 +22,7 @@ type Props = DictionaryComponentProps;
 export function Header({ dictionary }: Props) {
   const [scrollY, setScrollY] = useState(0);
 
-  const [menuMobileOpen, setMobileMenu] = useState(false);
+  const [menuMobileOpen, setMobileMenuOpen] = useState(false);
 
   const [menuLocaleOpen, setMenuLocaleOpen] = useState(false);
   const localeRef = useRef<HTMLButtonElement>(null);
@@ -72,13 +67,16 @@ export function Header({ dictionary }: Props) {
 
           <div className="flex items-center gap-4">
             <div className="lg:hidden">
-              <Backdrop opened={menuMobileOpen} toggle={setMobileMenu}>
+              <Backdrop opened={menuMobileOpen} toggle={setMobileMenuOpen}>
                 <AnimatePresence>
                   {menuMobileOpen && (
                     <motion.div
                       className="fixed right-0 top-0 z-40 h-dvh w-1/2 bg-background p-4"
                       {...fromRightAnimation}>
-                      <LinksSection dictionary={dictionary} />
+                      <LinksSection
+                        dictionary={dictionary}
+                        afterSection={() => setMobileMenuOpen(false)}
+                      />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -102,7 +100,9 @@ export function Header({ dictionary }: Props) {
             <div className="flex items-center gap-3 lg:hidden">
               <MenuIcon
                 size={20}
-                onClick={() => setMobileMenu(current => !current)}></MenuIcon>
+                onClick={() =>
+                  setMobileMenuOpen(current => !current)
+                }></MenuIcon>
             </div>
           </div>
         </nav>

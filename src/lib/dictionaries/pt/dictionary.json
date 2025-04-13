@@ -29,7 +29,6 @@
       "Desenvolvedor Frontend",
       "Engenheiro de Software"
     ],
-    "chips": ["+6 anos de experiência"],
     "getInTouch": "Entre em contato"
   },
   "about": {
@@ -45,8 +44,7 @@
     "database": "Banco de dados",
     "cloud": "Nuvem & Infra",
     "others": "Outros",
-    "experienceMonths": "meses de experiência",
-    "experienceYears": "anos de experiência"
+    "experience": "de experiência"
   },
   "contact": {
     "title": "../contato",

@@ -4,16 +4,18 @@ import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 
+import { DictionaryComponentProps, Locales } from '@/dictionaries';
 import { StackModel } from '@/models/stack.model';
+import { getExperienceTime } from '@/utils/get-relative-time';
 
-type Props = {
+type Props = DictionaryComponentProps & {
   index: number;
   stack: StackModel;
-  suffixMonths: string;
-  suffixYears: string;
 };
 
-export function SkillCard({ index, stack, suffixMonths, suffixYears }: Props) {
+export function SkillCard({ index, stack, dictionary }: Props) {
+  const experienceTime = getExperienceTime(stack.startedAt, dictionary.locale);
+
   return (
     <motion.article
       initial={{ opacity: 0, x: -100 }}
@@ -27,16 +29,9 @@ export function SkillCard({ index, stack, suffixMonths, suffixYears }: Props) {
           </span>
           <Image src={stack.imageUrl} alt={stack.name} width={25} height={25} />
         </div>
-        {'months' in stack ? (
-          <div className="w-full">
-            {stack.months} {suffixMonths}
-          </div>
-        ) : null}
-        {'years' in stack ? (
-          <div className="w-full">
-            {stack.years} {suffixYears}
-          </div>
-        ) : null}
+        <div className="w-full">
+          {experienceTime} {dictionary.skills.experience}
+        </div>
       </div>
     </motion.article>
   );

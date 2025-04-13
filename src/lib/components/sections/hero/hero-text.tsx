@@ -10,11 +10,18 @@ import { SocialMedias } from '@/components/medias';
 import { Typing } from '@/components/ui/typing';
 
 import { scaleAnimation } from '@/constants/animations';
+import { STARTED_CAREER_AT } from '@/constants/career';
 import { DictionaryComponentProps } from '@/dictionaries';
+import { getExperienceTime } from '@/utils/get-relative-time';
 
 type Props = DictionaryComponentProps;
 
 export function HeroText({ dictionary }: Props) {
+  const experienceTime = getExperienceTime(
+    STARTED_CAREER_AT,
+    dictionary.locale
+  );
+
   return (
     <motion.div
       className="grid w-[90%] place-items-center lg:w-[60%]"
@@ -42,16 +49,11 @@ export function HeroText({ dictionary }: Props) {
       </div>
       <div className="flex w-full flex-col gap-3 lg:gap-4 lg:ps-4">
         <div className="flex flex-wrap gap-2">
-          {dictionary.home.chips.map((chip, index) => (
-            <motion.div
-              key={index}
-              {...scaleAnimation}
-              transition={{ delay: 0.6 }}>
-              <span className="rounded-lg bg-main-dark px-3 py-1 text-xs font-semibold text-main-light lg:text-sm">
-                {chip}
-              </span>
-            </motion.div>
-          ))}
+          <motion.div {...scaleAnimation} transition={{ delay: 0.6 }}>
+            <span className="rounded-lg bg-main-dark px-3 py-1 text-xs font-semibold text-main-light lg:text-sm">
+              +{experienceTime} {dictionary.skills.experience}
+            </span>
+          </motion.div>
         </div>
         <a
           href="#contact"
@@ -59,7 +61,7 @@ export function HeroText({ dictionary }: Props) {
           <span className="font-semibold">{dictionary.home.getInTouch}</span>
           <ArrowRight size={20} />
         </a>
-        <SocialMedias />
+        <SocialMedias dictionary={dictionary} />
       </div>
     </motion.div>
   );

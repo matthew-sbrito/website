@@ -32,8 +32,7 @@ export function Skills({ dictionary }: Props) {
                   key={stack.name}
                   index={itemIndex}
                   stack={stack}
-                  suffixMonths={dictionary.skills.experienceMonths}
-                  suffixYears={dictionary.skills.experienceYears}
+                  dictionary={dictionary}
                 />
               ))}
             </div>

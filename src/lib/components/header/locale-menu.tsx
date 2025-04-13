@@ -25,9 +25,7 @@ export function LocaleMenu({ opened, toggle, x, scrollY, dictionary }: Props) {
       .replace('/en', localePath)
       .replace('/pt', localePath);
 
-    window.history.replaceState(null, '', pathnameNoLocale);
-
-    router.replace(pathnameNoLocale);
+    window.location.href = pathnameNoLocale;
   }
 
   return (
