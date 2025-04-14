@@ -22,7 +22,7 @@ export function MobileMenu({ opened, toggle, dictionary }: Props) {
       <AnimatePresence>
         {opened && (
           <motion.div
-            className="fixed right-0 top-0 z-40 h-dvh w-1/2 bg-background"
+            className="fixed right-0 top-0 z-40 h-dvh w-3/5 bg-background"
             {...fromRightAnimation}>
             <div className="h-full flex flex-col justify-center py-14 gap-4">
               <button
@@ -33,7 +33,7 @@ export function MobileMenu({ opened, toggle, dictionary }: Props) {
               {/* Header */}
               <div className="flex flex-col gap-4">
                 <span className="h-[1px] w-full bg-main"></span>
-                <div className="flex items-center px-3">
+                <div className="flex items-center px-3 gap-2">
                   <div className="relative w-7 h-7">
                     <Image
                       className="object-contain"
