@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 import { ArrowRight, Loader2Icon } from 'lucide-react';
 
-import { fromBottomAnimation, fromLeftAnimation } from '@/constants/animations';
+import { fromBottomAnimation } from '@/constants/animations';
 import { DictionaryComponentProps } from '@/dictionaries';
 
 import { toast } from 'sonner';

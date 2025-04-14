@@ -13,7 +13,8 @@
     "contact": "Contact",
     "resume": "Resume",
     "themeButtonTitle": "Switch theme",
-    "localeButtonTitle": "Switch language"
+    "localeButtonTitle": "Switch language",
+    "together": "Let's build something awesome together"
   },
   "resume": {
     "link": "/en/cv",

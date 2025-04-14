@@ -55,13 +55,13 @@ export function HeroText({ dictionary }: Props) {
             </span>
           </motion.div>
         </div>
+        <SocialMedias dictionary={dictionary} />
         <a
           href="#contact"
-          className="shadow-button flex w-max cursor-pointer items-center justify-center gap-2 rounded-lg bg-main px-3 py-2 text-sm text-white transition-all duration-200 ease-in hover:bg-main-light disabled:opacity-50 lg:px-4 lg:py-3 lg:text-base">
+          className="shadow-button flex w-max cursor-pointer items-center justify-center gap-2 rounded-lg bg-main px-3 py-2 text-sm text-white transition-all duration-200 ease-in hover:bg-main-light disabled:opacity-50 lg:px-4 lg:py-2.5 lg:text-base">
           <span className="font-semibold">{dictionary.home.getInTouch}</span>
           <ArrowRight size={20} />
         </a>
-        <SocialMedias dictionary={dictionary} />
       </div>
     </motion.div>
   );

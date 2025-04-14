@@ -61,7 +61,7 @@ export function LinksSection({ dictionary, afterSection, children }: Props) {
   }, []);
 
   return (
-    <ul className="flex flex-col items-center gap-4 lg:flex-row">
+    <ul className="flex flex-col lg:items-center  gap-3 lg:gap-4 lg:flex-row">
       {SECTIONS.map(section => (
         <li key={section.id}>
           <a

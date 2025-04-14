@@ -31,6 +31,10 @@
       var(--tw-shadow);
   }
 
+  .italic {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+
   /* Global light variables */
   :root {
     --background: #efefef;

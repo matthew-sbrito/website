@@ -13,7 +13,8 @@
     "contact": "Contato",
     "resume": "Curriculo",
     "themeButtonTitle": "Trocar o tema",
-    "localeButtonTitle": "Trocar o idioma"
+    "localeButtonTitle": "Trocar o idioma",
+    "together": "Vamos construir algo incrível juntos"
   },
   "resume": {
     "link": "/pt/cv",

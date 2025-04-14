@@ -22,14 +22,21 @@ type Props = {
   opened: boolean;
   transparent?: boolean;
   toggle: (opened: boolean) => void;
+  className?: string;
   children: ReactNode;
 };
 
-export function Backdrop({ opened, transparent, toggle, children }: Props) {
+export function Backdrop({
+  opened,
+  transparent,
+  toggle,
+  className,
+  children,
+}: Props) {
   if (typeof document === 'undefined') return null;
 
   return createPortal(
-    <div className="z-50">
+    <div className={className}>
       <motion.div
         className={cn('fixed inset-0 z-30 h-screen w-screen', {
           'bg-black/30': !transparent,

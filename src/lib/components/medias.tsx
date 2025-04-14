@@ -6,7 +6,7 @@ type Props = DictionaryComponentProps;
 
 export function SocialMedias({ dictionary }: Props) {
   return (
-    <div className="flex max-w-max items-center gap-2 rounded-lg bg-main px-2 py-1 lg:gap-4 lg:px-3 lg:py-2">
+    <div className="flex max-w-max items-center gap-2 rounded-lg bg-main p-2 lg:gap-4 lg:px-3">
       <a
         title="LinkedIn"
         href="https://linkedin.com/in/matthew-sbrito"
