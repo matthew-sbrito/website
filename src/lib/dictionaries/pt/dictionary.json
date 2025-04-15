@@ -10,6 +10,7 @@
     "about": "Sobre",
     "projects": "Projetos",
     "skills": "Habilidades",
+    "experiences": "Experiências",
     "contact": "Contato",
     "resume": "Curriculo",
     "themeButtonTitle": "Trocar o tema",
@@ -46,6 +47,25 @@
     "cloud": "Nuvem & Infra",
     "others": "Outros",
     "experience": "de experiência"
+  },
+  "experiences": {
+    "title": "../experiências",
+    "subtitle": "Onde eu trabalhei",
+    "skills": "Habilidades",
+    "positions": {
+      "evolveIt": "Engenheiro de software",
+      "techSolutio": "Desenvolvedor de Software",
+      "fransciscoFarm": "Desenvolvedor de Software",
+      "dantasEletro": "Desenvolvedor de Software",
+      "capitalNerd": "Desenvolvedor de Software"
+    },
+    "descriptions": {
+      "evolveIt": "Desenvolveu uma plataforma SaaS multi-tenant focada em comunicação com clientes e automação. Integrou canais de mensagens como SMS, Email, WhatsApp e Facebook com IA para melhorar a qualidade das interações. Construiu APIs escaláveis e interfaces responsivas alinhadas com os designs do Figma.",
+      "techSolutio": "Implementou um sistema unificado para processar falhas de telecomunicação em diversos tipos de equipamentos. Desenvolveu microsserviços escaláveis e orientados a eventos utilizando comunicação assíncrona para melhorar o tempo de restauração dos serviços.",
+      "fransciscoFarm": "Aprimorou o controle de acesso e a rastreabilidade dos usuários, melhorando a autenticação e implementando um sistema de auditoria para registrar ações. Desenvolveu um aplicativo de inventário offline usando Flutter, com sincronização automática dos dados e leitura de QR Code para agilizar operações em locais sem internet.",
+      "dantasEletro": "Modernizou fluxos de vendas legados com uma ferramenta de automação que simplificou a experiência do usuário e reduziu etapas operacionais. Atuou tanto no backend quanto no frontend utilizando .NET e React.",
+      "capitalNerd": "Manteve e aprimorou um sistema ERP personalizado, reduzindo o tempo de resolução de bugs e melhorando a performance. Criou tarefas em segundo plano com Hangfire e contribuiu para o frontend baseado em Angular."
+    }
   },
   "contact": {
     "title": "../contato",

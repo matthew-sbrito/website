@@ -12,14 +12,14 @@ import { Typing } from '@/components/ui/typing';
 import { scaleAnimation } from '@/constants/animations';
 import { STARTED_CAREER_AT } from '@/constants/career';
 import { DictionaryComponentProps } from '@/dictionaries';
-import { getExperienceTime } from '@/utils/get-relative-time';
+import { getExperienceTime } from '@/utils/get-experience-time';
 
 type Props = DictionaryComponentProps;
 
 export function HeroText({ dictionary }: Props) {
   const experienceTime = getExperienceTime(
-    STARTED_CAREER_AT,
-    dictionary.locale
+    dictionary.locale,
+    STARTED_CAREER_AT
   );
 
   return (

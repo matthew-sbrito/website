@@ -20,14 +20,18 @@ const units: Intl.RelativeTimeFormatUnit[] = [
   'year',
 ];
 
-export function getExperienceTime(date: Date, locale: string) {
+export function getExperienceTime(
+  locale: string,
+  startedAt: Date,
+  endedAt?: Date
+) {
   const lang = locale === 'pt' ? 'pt-BR' : 'en-US';
 
-  const dateMs = date.getTime();
-  const nowMs = new Date().getTime();
+  const startedMs = startedAt.getTime();
+  const endedMs = (endedAt ?? new Date()).getTime();
 
   // Get the amount of seconds between the given date and now
-  const deltaSeconds = Math.round((dateMs - nowMs) / 1000);
+  const deltaSeconds = Math.round((startedMs - endedMs) / 1000);
 
   // Grab the ideal cutoff unit
   const unitIndex = cutoffs.findIndex(

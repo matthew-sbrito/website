@@ -13,14 +13,14 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'MB Dev',
-    template: '%s | MB Dev',
+    default: 'Matheus Brito',
+    template: '%s | Matheus Brito',
   },
   description:
     'Full Stack Developer specialized in Next.js, React, and .NET. Passionate about delivering results through high-performance software and clean architecture.',
   creator: 'Matheus Brito dos Santos',
-  applicationName: 'MB Dev',
-  publisher: 'MB Dev',
+  applicationName: 'Matheus Brito',
+  publisher: 'Matheus Brito',
   referrer: 'no-referrer-when-downgrade',
   category: 'Web Development',
   classification: 'Web Development',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://matthew-sbrito.vercel.app',
-    title: 'MB Dev | Full Stack Developer Portfolio',
+    title: 'Matheus Brito | Full Stack Developer Portfolio',
     description:
       'Portfolio of Matheus Brito, a software developer focused on modern technologies such as Next.js, React, and .NET.',
     images: {
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MB Dev | Matheus Brito',
+    title: 'Matheus Brito | Matheus Brito',
     description:
       'Web developer focused on performance, UX, and results. Check out my portfolio and projects.',
     images: {

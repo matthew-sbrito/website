@@ -16,20 +16,20 @@ export function Skills({ dictionary }: Props) {
       id="skills"
       title={dictionary.skills.title}
       subtitle={dictionary.skills.subtitle}>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-4 pb-12">
         {skillsByGroup.map((group, groupIndex) => (
           <div
             key={group.key}
             className={cn('flex flex-col gap-4 pb-4 lg:flex-row lg:py-8', {
               'border-b border-main': groupIndex !== skillsByGroup.length - 1,
             })}>
-            <h4 className="text-lg font-semibold italic text-main-light sm:text-xl lg:min-w-48 lg:text-2xl">
+            <h4 className="text-base font-semibold italic text-main-light sm:text-lg lg:min-w-48 lg:text-xl">
               {dictionary.skills[group.key]}
             </h4>
             <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3">
               {group.sources.map((stack, itemIndex) => (
                 <SkillCard
-                  key={stack.name}
+                  key={itemIndex}
                   index={itemIndex}
                   stack={stack}
                   dictionary={dictionary}

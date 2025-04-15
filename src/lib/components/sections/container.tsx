@@ -10,14 +10,21 @@ type Props = {
   id: string;
   title: string;
   subtitle: string;
+  className?: string;
   children: ReactNode;
 };
 
-export function SectionContainer({ id, title, subtitle, children }: Props) {
+export function SectionContainer({
+  id,
+  title,
+  subtitle,
+  className,
+  children,
+}: Props) {
   return (
     <section
       id={id}
-      className="grid-child flex min-h-[--view-height] flex-col items-center justify-center pt-12 lg:pt-0">
+      className="grid-child flex min-h-[--view-height] flex-col items-center justify-center pt-14 lg:pt-0">
       <div className="flex w-[90%] flex-col gap-5">
         <motion.div className="flex flex-col" {...fromLeftAnimation}>
           <h2 className="text-md text-main sm:text-lg lg:text-xl">{title}</h2>

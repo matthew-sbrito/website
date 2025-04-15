@@ -10,6 +10,7 @@
     "about": "About",
     "projects": "Projects",
     "skills": "Skills",
+    "experiences": "Experiences",
     "contact": "Contact",
     "resume": "Resume",
     "themeButtonTitle": "Switch theme",
@@ -47,6 +48,25 @@
     "cloud": "Cloud & Infra",
     "others": "Others",
     "experience": "of experience"
+  },
+  "experiences": {
+    "title": "../experiences",
+    "subtitle": "Where I worked",
+    "skills": "Skills",
+    "positions": {
+      "evolveIt": "Software Engineer",
+      "techSolutio": "Software Developer",
+      "fransciscoFarm": "Software Developer",
+      "dantasEletro": "Software Developer",
+      "capitalNerd": "Software Developer"
+    },
+    "descriptions": {
+      "evolveIt": "Developed a multi-tenant SaaS platform focused on customer communication and automation. Integrated messaging channels like SMS, Email, WhatsApp, and Facebook with AI to improve interaction quality. Built scalable APIs and responsive UIs aligned with Figma designs.",
+      "techSolutio": "Implemented a unified system to process telecom failures across various equipment types. Built scalable, event-driven microservices using asynchronous communication to improve service restoration time.",
+      "fransciscoFarm": "Improved user access control and traceability by enhancing authentication and implementing an audit system to log user actions. Developed a mobile inventory app using Flutter that worked offline and synchronized data when connected, using QR code scanning to streamline operations in areas without internet.",
+      "dantasEletro": "Modernized legacy sales workflows with an automation tool that streamlined user experience and reduced operational steps. Worked on both backend and frontend using .NET and React.",
+      "capitalNerd": "Maintained and improved a custom ERP system, reducing bug resolution time and enhancing performance. Created background jobs with Hangfire and contributed to the Angular-based frontend."
+    }
   },
   "contact": {
     "title": "../contact",

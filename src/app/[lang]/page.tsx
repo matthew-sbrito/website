@@ -1,6 +1,7 @@
 import { Header } from '@/components/header';
 import { About } from '@/components/sections/about';
 import { Contact } from '@/components/sections/contact';
+import { Experiences } from '@/components/sections/experiences';
 import { Hero } from '@/components/sections/hero';
 import { Skills } from '@/components/sections/skills';
 
@@ -19,6 +20,7 @@ export default async function Page({ params }: Props) {
         <Hero dictionary={dictionary} />
         <About dictionary={dictionary} />
         <Skills dictionary={dictionary} />
+        <Experiences dictionary={dictionary} />
         <Contact dictionary={dictionary} />
       </main>
       <footer className="h-16"></footer>
