@@ -1,7 +1,6 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { createPortal } from 'react-dom';
 
 import { AnimatePresence, motion } from 'framer-motion';
 

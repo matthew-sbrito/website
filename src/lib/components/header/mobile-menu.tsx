@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { RocketIcon, XIcon } from 'lucide-react';
+import { XIcon } from 'lucide-react';
 
 import { fromRightAnimation } from '@/constants/animations';
 import { DictionaryComponentProps } from '@/dictionaries';

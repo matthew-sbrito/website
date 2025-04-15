@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -14,8 +13,6 @@ import { HeaderMenuProps, menuHeaderClassName } from './common';
 type Props = DictionaryComponentProps & HeaderMenuProps;
 
 export function LocaleMenu({ opened, toggle, x, scrollY, dictionary }: Props) {
-  const router = useRouter();
-
   function switchLocale(locale: Locales) {
     const localePath = `/${locale}`;
 

@@ -3,14 +3,10 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
-import { AnimatePresence, motion } from 'framer-motion';
-
 import { MenuIcon } from 'lucide-react';
 
-import { fromRightAnimation } from '@/constants/animations';
 import { DictionaryComponentProps } from '@/dictionaries';
 
-import { Backdrop } from '../ui/backdrop';
 import { LinksSection } from './links';
 import { LocaleButton } from './locale-button';
 import { LocaleMenu } from './locale-menu';

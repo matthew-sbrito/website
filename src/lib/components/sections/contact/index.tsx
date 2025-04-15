@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { SocialMedias } from '@/components/medias';
 
 import { DictionaryComponentProps } from '@/dictionaries';

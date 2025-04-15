@@ -10,17 +10,10 @@ type Props = {
   id: string;
   title: string;
   subtitle: string;
-  className?: string;
   children: ReactNode;
 };
 
-export function SectionContainer({
-  id,
-  title,
-  subtitle,
-  className,
-  children,
-}: Props) {
+export function SectionContainer({ id, title, subtitle, children }: Props) {
   return (
     <section
       id={id}
