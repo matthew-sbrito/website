@@ -16,11 +16,7 @@ export function LinksSection({ dictionary, afterSection, children }: Props) {
   const [sectionId, setSectionId] = useState('home');
 
   function onIntersection(entries: IntersectionObserverEntry[]) {
-    console.log(entries);
-
     const entry = entries.find(entry => entry.isIntersecting);
-
-    console.log(entry);
 
     if (entry == undefined) return;
 

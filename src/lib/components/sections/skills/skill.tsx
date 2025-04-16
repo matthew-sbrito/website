@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 import { DictionaryComponentProps } from '@/dictionaries';
 import { StackModel } from '@/models/stack.model';
-import { getExperienceTime } from '@/utils/get-experience-time';
+import { getStackExperienceTime } from '@/utils/get-experience-time';
 
 type Props = DictionaryComponentProps & {
   index: number;
@@ -14,7 +14,10 @@ type Props = DictionaryComponentProps & {
 };
 
 export function SkillCard({ index, stack, dictionary }: Props) {
-  const experienceTime = getExperienceTime(dictionary.locale, stack.startedAt);
+  const experienceTime = getStackExperienceTime(
+    dictionary.locale,
+    stack.startedAt
+  );
 
   return (
     <motion.article

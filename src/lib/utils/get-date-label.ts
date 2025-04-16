@@ -1,4 +1,4 @@
-import { getExperienceTime } from './get-experience-time';
+import { getCompanyExperienceTime } from './get-experience-time';
 
 const pt = new Intl.DateTimeFormat('pt-BR', {
   month: 'short',
@@ -17,7 +17,7 @@ export function getDateLabel(locale: string, startedAt: Date, endedAt?: Date) {
   const endPt = endedAt ? pt.format(endedAt) : 'presente';
   const endEn = endedAt ? en.format(endedAt) : 'present';
 
-  const experienceTime = getExperienceTime(locale, startedAt, endedAt);
+  const experienceTime = getCompanyExperienceTime(locale, startedAt, endedAt);
 
   const labels = {
     pt: `${startPt} • ${endPt} • (${experienceTime})`,

@@ -1,7 +1,7 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 
 import { Toaster } from 'sonner';
 
@@ -11,8 +11,6 @@ type Props = {
 
 export function ToastProvider({ children }: Props) {
   const { resolvedTheme } = useTheme();
-
-  useEffect(() => console.log(resolvedTheme), [resolvedTheme]);
 
   return (
     <>
