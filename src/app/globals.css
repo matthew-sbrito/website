@@ -14,13 +14,15 @@
     }
 
     /* Main colors */
-    --main: hsl(259, 76%, 58%);
-    --main-light: hsl(259, 50%, 59%);
-    --main-dark: hsl(259, 86%, 14%);
-
     --main-rgb: 118 67 229;
     --main-light-rgb: 131 98 203;
     --main-dark-rgb: 24 5 66;
+
+    /* 
+      --main-rgb: 5 150 105;
+      --main-light-rgb: 52 211 153;
+      --main-dark-rgb: 6 78 59; 
+    */
   }
 
   .shadow-button {
